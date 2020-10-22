@@ -8,6 +8,11 @@
 ```shell
 docker build -t samagragovernance/airflow:0.0.4 .
 docker save --output airflow.tar samagragovernance/airflow:0.0.4
+
+docker pull postgres:9.6
+docker pull redis:5.0.5
+docker save --output redis.tar redis:5.0.5
+docker save --output postgres.tar postgres:9.6
 ```
 - Build Portainer
 ```shell
