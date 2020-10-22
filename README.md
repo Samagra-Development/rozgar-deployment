@@ -1,6 +1,6 @@
 # rozgar-deployment
 
-## Task List
+## Steps
 - Install docker using zip
 - Setup docker swarm
 - Setup Citus
@@ -29,16 +29,25 @@ scp binaries
 - Docker load all this
 - Create docker-compose files to run
 - Transfer the docker containers and Airflow git
+```shell
+scp <airflow folder> root@10.88.232.223:/mnt/
+cd samagra-airflow
+adduser airflow
+chown -R airflow:airflow dags
+```
 - Setup portainer
 - Setup airflow
 ```shell
-docker load -i hasura.tar
+docker load -i airflow.tar
+docker load -i postgres.tar
+docker load -i redis.tar
 ```
 - Setup hasura
 ```shell
 docker load -i hasura.tar
 ```
 - Get the other IP and add it to swarm
+
 - Creating Airflow user
 
 ```shell
