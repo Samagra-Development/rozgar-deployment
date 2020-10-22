@@ -1,7 +1,7 @@
 # rozgar-deployment
 
 ## Steps
-- Install docker using zip
+- Install docker using zip - The steps for the same are listed [here](https://docs.docker.com/engine/install/binaries/)
 - Setup docker swarm
 - Setup Citus
 - Build Airflow
