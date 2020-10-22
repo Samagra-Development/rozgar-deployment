@@ -48,6 +48,11 @@ docker load -i hasura.tar
 ```
 - Get the other IP and add it to swarm
 
+- Start Airflow
+```
+docker-compose -f docker-compose-CeleryExecutor.yml up -d
+```
+
 - Creating Airflow user
 
 ```shell
