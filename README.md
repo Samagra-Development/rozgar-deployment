@@ -40,3 +40,21 @@ docker load -i hasura.tar
 ```
 - Get the other IP and add it to swarm
 - Creating Airflow user
+
+```shell
+docker-compose -f docker-compose-CeleryExecutor.yml exec --env AIRFLOW__CORE__SQL_ALCHEMY_CONN="postgresql+psycopg2://airflow:airflow@postgres:5432/airflow" webserver python
+```
+
+```python
+from airflow import models, settings
+from airflow.contrib.auth.backends.password_auth import PasswordUser
+user = PasswordUser(models.User())
+user.username = 'admin'
+user.email = 'admin@rozgarportal.com'
+user.password = 'admin'
+session = settings.Session()
+session.add(user)
+session.commit()
+session.close()
+exit()
+```
