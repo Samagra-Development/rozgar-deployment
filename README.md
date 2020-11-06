@@ -80,4 +80,7 @@ exit()
 
 - Updating the DAGs
 After the folders are updated. Use the following command to update the permissions.
-```docker-compose -f docker-compose-CeleryExecutor.yml exec --user root webserver chmod -R 777 dags``
+
+```shell
+docker-compose -f docker-compose-CeleryExecutor.yml exec --user root webserver chmod -R 777 dags
+```
