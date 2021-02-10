@@ -78,6 +78,22 @@ session.close()
 exit()
 ```
 
+For creating a superuser
+```python
+from airflow import models, settings
+from airflow.contrib.auth.backends.password_auth import PasswordUser
+user = PasswordUser(models.User())
+user.username = 'admin'
+user.email = 'admin@rozgarportal.com'
+user.password = 'admin'
+user.superuser = True # Change from above.
+session = settings.Session()
+session.add(user)
+session.commit()
+session.close()
+exit()
+```
+
 - Updating the DAGs
 After the folders are updated. Use the following command to update the permissions.
 
